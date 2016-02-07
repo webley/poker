@@ -1,10 +1,16 @@
 <div>
     <md-input-container>
         <label>Card 1</label>
-        <input ng-model="hand.card1">
+        <md-select ng-model="ctrl.card1">
+            <md-option ng-value="card" ng-repeat="card in ctrl.deck">{{ card.shortName }}</md-option>
+        </md-select>
     </md-input-container>
     <md-input-container>
         <label>Card 2</label>
-        <input ng-model="hand.card2">
+        <md-select ng-model="ctrl.card2">
+            <md-option ng-value="card" ng-repeat="card in ctrl.deck">{{ card.shortName }}</md-option>
+        </md-select>
     </md-input-container>
+    <md-button ng-click="ctrl.calculate()">Calculate</md-button>
+    <div>Ranking: {{ctrl.ranking}}</div>
 </div>
