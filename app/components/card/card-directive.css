@@ -1,0 +1,9 @@
+.card-img {
+    width: 90%;
+    height: 90%;
+}
+
+.card-deck {
+    min-height: 100%;
+    height: 100%;
+}

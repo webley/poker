@@ -13,4 +13,13 @@
     </md-input-container>
     <md-button ng-click="ctrl.calculate()">Calculate</md-button>
     <div>Ranking: {{ctrl.ranking}}</div>
+
+    <md-grid-list class="card-deck"
+            md-cols-xs="13" md-cols-sm="13" md-cols-md="13" md-cols-gt-md="13"
+            md-row-height-gt-md="2:3" md-row-height="2:3"
+            md-gutter="4px" md-gutter-gt-sm="3px" >
+        <md-grid-tile ng-repeat="card in ctrl.deck" md-rowspan="1" md-colspan="1" md-colspan-sm="1">
+            <wbl-card card-value="card.shortName"></wbl-card>
+        </md-grid-tile>
+    </md-grid-list>
 </div>
