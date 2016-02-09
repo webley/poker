@@ -7,7 +7,8 @@
                 //require: 'cardValue',
                 restrict: 'E',
                 scope: {
-                    cardValue: '='
+                    cardValue: '=',
+                    selected: '&'
                 },
                 bindToController: true,
                 templateUrl: 'components/card/card-directive.tpl.html',

@@ -1,25 +1,15 @@
-<div>
-    <md-input-container>
-        <label>Card 1</label>
-        <md-select ng-model="ctrl.card1">
-            <md-option ng-value="card" ng-repeat="card in ctrl.deck">{{ card.shortName }}</md-option>
-        </md-select>
-    </md-input-container>
-    <md-input-container>
-        <label>Card 2</label>
-        <md-select ng-model="ctrl.card2">
-            <md-option ng-value="card" ng-repeat="card in ctrl.deck">{{ card.shortName }}</md-option>
-        </md-select>
-    </md-input-container>
-    <md-button ng-click="ctrl.calculate()">Calculate</md-button>
-    <div>Ranking: {{ctrl.ranking}}</div>
+<div class="hand-selector">
+    <div ng-if="ctrl.ranking">Ranking: {{ctrl.ranking}} / 169</div>
+    <div ng-if="!ctrl.ranking">Select a starting hand.</div>
 
     <md-grid-list class="card-deck"
             md-cols-xs="13" md-cols-sm="13" md-cols-md="13" md-cols-gt-md="13"
             md-row-height-gt-md="2:3" md-row-height="2:3"
             md-gutter="4px" md-gutter-gt-sm="3px" >
         <md-grid-tile ng-repeat="card in ctrl.deck" md-rowspan="1" md-colspan="1" md-colspan-sm="1">
-            <wbl-card card-value="card.shortName"></wbl-card>
+            <wbl-card card-value="card.shortName" class="card"
+                      selected="ctrl.isSelected(card)" ng-click="ctrl.cardClick(card)"
+                      tabindex="-1"></wbl-card>
         </md-grid-tile>
     </md-grid-list>
 </div>
