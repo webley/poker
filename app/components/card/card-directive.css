@@ -5,10 +5,13 @@
 .card-outer {
     display: flex;
     height: 100%;
+    cursor: pointer;
 }
 
 .card-selected {
-    border: 2px black solid;
+    border: 1px #0077ee solid;
+    border-radius: 12px;
+    background-color: rgb(204, 234, 248);
 }
 
 .card-img {
